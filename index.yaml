@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/05Paul/homelab-charts/releases/download/forward-0.1.0/forward-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-12T13:41:04.631086396Z"
+  forward-ingress:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-07-12T13:44:47.912256528Z"
+    description: Creates an ingress to forward traffic to a service
+    digest: 61dcd7bca69efb7ff24c3ddf70ed1f30743b82b33653db66534749e946bac14b
+    name: forward-ingress
+    type: application
+    urls:
+    - https://github.com/05Paul/homelab-charts/releases/download/forward-ingress-0.1.0/forward-ingress-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-07-12T13:44:47.912266166Z"
