@@ -1,0 +1,15 @@
+service:
+  name: example
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations: {}
+  hosts:
+    - host: example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
