@@ -1,5 +1,5 @@
 apiVersion: v2
-name: forward
+name: forward-ingress
 description: Creates an ingress to forward traffic to a service
 
 # A chart can be either an 'application' or a 'library' chart.
