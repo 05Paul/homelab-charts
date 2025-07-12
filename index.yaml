@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  forward:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-12T13:41:04.631081217Z"
+    description: A Helm chart for Kubernetes
+    digest: 79a95653a9e8195492cdef0535defba35514292739610f1c10ab57cd4854bb28
+    name: forward
+    type: application
+    urls:
+    - https://github.com/05Paul/homelab-charts/releases/download/forward-0.1.0/forward-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-07-12T13:41:04.631086396Z"
