@@ -50,7 +50,7 @@ spec:
             - name: POSTGRES_DB
               value: mealie
             - name: POSTGRES_SERVER
-              value: mealie-postgresql
+              value: {{ include "mealie.fullname" . }}-postgresql
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_PASSWORD
