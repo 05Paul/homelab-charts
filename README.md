@@ -1,5 +1,5 @@
 # Homelab charts
 Charts used in my homelab
 
-1. [Forward](./forward)
-2. [Forward-Ingress](./forward-ingress)
+1. [Forward](./charts/forward)
+2. [Forward-Ingress](./charts/forward-ingress)
