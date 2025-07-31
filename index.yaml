@@ -25,6 +25,20 @@ entries:
   mealie:
   - apiVersion: v2
     appVersion: v3.0.2
+    created: "2025-07-31T13:56:43.038576916Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.7.18
+    description: Chart to deploy mealie
+    digest: c8f02f48097c0e313d6557df0d1050478fe107cc858b39204bb279cecd8395f8
+    name: mealie
+    type: application
+    urls:
+    - https://github.com/05Paul/homelab-charts/releases/download/mealie-0.0.8/mealie-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: v3.0.2
     created: "2025-07-31T13:43:34.038498315Z"
     dependencies:
     - name: postgresql
@@ -121,4 +135,4 @@ entries:
     urls:
     - https://github.com/05Paul/homelab-charts/releases/download/mealie-0.0.1/mealie-0.0.1.tgz
     version: 0.0.1
-generated: "2025-07-31T13:43:34.038521028Z"
+generated: "2025-07-31T13:56:43.038619104Z"
