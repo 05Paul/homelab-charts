@@ -48,39 +48,49 @@ spec:
             - name: PGID
               value: "1000"
             - name: POSTGRES_DB
-              value: mealie
+              value: {{ .Values.postgresql.auth.database }}
             - name: POSTGRES_SERVER
               value: {{ include "mealie.fullname" . }}-postgresql
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mealie
-                  key: postgres-password
+              value: {{ .Values.postgresql.auth.password }}
             - name: POSTGRES_USER
-              value: mealie
+              value: {{ .Values.postgresql.auth.username }}
+            {{- with .Values.mealie.smtp.host }}
             - name: SMTP_HOST
-              value: smtp.gmail.com
+              value: {{ . }}
+            {{- end }}
+            {{- with .Values.mealie.smtp.port }}
             - name: SMTP_PORT
-              value: "587"
+              value: {{ . }}
+            {{- end }}
+            {{- with .Values.mealie.smtp.fromName }}
             - name: SMTP_FROM_NAME
-              value: pl.skamrada@gmail.com
+              value: {{ . }}
+            {{- end }}
+            {{- with .Values.mealie.smtp.fromEmail }}
             - name: SMTP_FROM_EMAIL
-              value: pl.skamrada@gmail.com
+              value: {{ . }}
+            {{- end }}
+            {{- with .Values.mealie.smtp.auth.strategy }}
             - name: SMTP_AUTH_STRATEGY
-              value: TLS
+              value: {{ . }}
+            {{- end }}
+            {{- with .Values.mealie.smtp.auth.user }}
             - name: SMTP_USER
-              value: pl.skamrada@gmail.com
+              value: {{ . }}
+            {{- end }}
+            {{- with .Values.mealie.smtp.auth.password }}
             - name: SMTP_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mealie
-                  key: gmail-app-pw
+              value: {{ . }}
+            {{- end }}
             - name: PUID
               value: "1000"
+            {{- with .Values.mealie.tz }}
             - name: TZ
-              value: Europe/Vienna
+              value: {{ . }}
+            {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -101,7 +111,7 @@ spec:
       volumes:
         - name: mealie-data
           persistentVolumeClaim:
-            claimName: mealie-data
+            claimName: {{ .Values.mealie.persistenc.name }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}

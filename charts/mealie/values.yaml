@@ -121,7 +121,20 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-
+mealie:
+  smtp:
+    host: example.com
+    port: 587
+    fromName: "John Doe"
+    fromEmail: john.doe@example.com
+    auth:
+      strategy: TLS
+      user: john.doe@example.com
+      password:
+  tz: UTC
+  persistence:
+    name: mealie-data
+    size: 8Gi
 
 postgresql:
   auth: 
