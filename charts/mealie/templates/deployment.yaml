@@ -63,7 +63,7 @@ spec:
             {{- end }}
             {{- with .Values.mealie.smtp.port }}
             - name: SMTP_PORT
-              value: {{ . }}
+              value: {{ . | quote }}
             {{- end }}
             {{- with .Values.mealie.smtp.fromName }}
             - name: SMTP_FROM_NAME
